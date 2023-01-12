@@ -1,7 +1,9 @@
 import React from 'react';
 import { AiOutlineCheckCircle, AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
 
-function Task() {
+function Task(task) {
+
+    
     return (
         <table className='table-fixed min-w-fit'>
             <thead className='min-w-fit'>
