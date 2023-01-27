@@ -28,4 +28,26 @@ const taskSchema = new mongoose.Schema ({
         type: String,
         required: [true, 'No priority specified.']
     }
-})
+});
+
+const Task = mongoose.model('Task', taskSchema);
+
+const task = new Task ({
+    name: '',
+    task: '',
+    priority: ''
+});
+
+Task.find(function(err, tasks) {
+    if (err) {
+        console.log(err);
+    } else {
+
+        mongoose.connection.close();
+        console.log(task);
+
+        tasks.forEach(function(task){
+            console.log(task.name);
+        });
+    }
+});

@@ -1,5 +1,7 @@
 import React from 'react'
 import Task from './Task';
+import AddTask from './AddTask'
+
 
 function Card() {
     return (
@@ -15,7 +17,8 @@ function Card() {
 
 
                 <div className='flex justify-end align-baseline pr-4' >
-                    <button className='bg-red-500 text-white rounded-md w-20'>Add Task</button>
+                    <AddTask />
+
                 </div>
             </div>
         </div>
