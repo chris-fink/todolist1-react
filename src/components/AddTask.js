@@ -11,16 +11,26 @@ function AddTask() {
     <button
       className='border border-blue-900 bg-transparent rounded cursor-pointer font-semibold py-2 px-4 hover:bg-blue-500 hover:text-white
         dark:text-sky-200 dark:border-sky-200  
-        dark:hover:bg-blue-500  dark:hover:text-white dark:hover:border-transparent '
+        dark:hover:bg-blue-500  dark:hover:text-white dark:hover:border-transparent 
+        transition
+        duration-150
+        ease-in-out'
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
       onClick={() => setShowForm(true)}
     >
-      AddTask
+      Add Task
+
 
       {/*Displays Form when button is clicked*/}
       {showForm && (
+
         <div className='w-full'>
           <div className='flex justify-between mt-4'>
-            <form className='inline-flex'>
+            <form
+              className='inline-flex'
+              id='taskForm'
+            >
               <div className='mr-2'>
                 <label for="name">Name: </label>
                 <input
@@ -61,16 +71,20 @@ function AddTask() {
               </button>
             </form>
 
-            <AiOutlineCloseCircle
-              className='cursor-pointer ml-6 hover:slate-800'
-              size='1.25em'
-              color='black'
-              onClick={() => setShowForm(false)}
-            />
+            <div className='content' id='close_button'>
+              <AiOutlineCloseCircle
+                className='cursor-pointer ml-6 hover:slate-800'
+                size='1.25em'
+                color='black'
+                onClick={() => {
+                  this.disable_button();
+                }}
+              />
+            </div>
           </div>
         </div>
       )}
-    </button>
+    </button >
   )
 }
 
